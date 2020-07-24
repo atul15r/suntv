@@ -1,0 +1,236 @@
+@font-face {
+	font-family: "open";
+	src: local("open"), url(./fonts/OpenSans.ttf) format("truetype");
+}
+* {
+	font-family: open;
+}
+.App {
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+input {
+	width: -webkit-fill-available;
+	padding: 0px;
+	border: none;
+	height: inherit;
+	padding-left: 5px;
+	height: 100%;
+}
+input:focus {
+	outline: none;
+}
+a {
+	outline: none;
+	text-decoration: none;
+	color: #039af4;
+}
+
+div .ui.right.floated.menu {
+	box-shadow: none;
+	border: none;
+}
+::-webkit-input-placeholder {
+	color: #74839682;
+}
+div .MuiPickersToolbar-toolbar {
+	background: #f3724f;
+}
+div .MuiPickersDay-daySelected {
+	background: #f3724f;
+}
+div .MuiPickersDay-daySelected:hover {
+	background: #de3608;
+}
+div .MuiTypography-colorPrimary {
+	color: #de3608;
+}
+div .MuiButton-textPrimary {
+	color: #6b6b6b;
+}
+div .MuiPickersToolbarText-toolbarTxt {
+	color: rgba(255, 255, 255, 0.69);
+}
+#btn {
+	border-radius: 30px;
+}
+
+#btn:focus {
+	outline: none;
+}
+div .ui.menu {
+	background: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(117, 117, 117);
+	border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555555;
+}
+.csv-reader-input {
+	border: none;
+}
+.csvInput {
+	display: none;
+}
+div .MuiChip-root {
+	height: 18px;
+	position: absolute;
+	right: 5px;
+}
+
+#csv {
+	position: absolute;
+	left: 0px;
+}
+#csv .MuiChip-label {
+	font-weight: 100;
+	padding-right: 0px;
+	margin-right: -25px;
+	color: #999;
+}
+div .MuiCircularProgress-colorPrimary {
+	margin-top: 9px;
+}
+
+#msg {
+	width: 40%;
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-45%, -50%);
+}
+
+#snack .MuiSnackbarContent-root {
+	background: #039af4;
+	text-align: center;
+}
+
+#snack2 .MuiSnackbarContent-root {
+	background: #039af4;
+	text-align: center;
+}
+
+#dateInput {
+	width: -webkit-fill-available;
+	height: 33px;
+}
+
+/* responsive table */
+div .MuiTableCell-head {
+	font-weight: 600;
+}
+
+/* appbar and drawer */
+
+div .MuiPaper-elevation4 {
+	box-shadow: 0 1px 20px 0 rgba(46, 61, 73, 0.2);
+	animation: sticky-slide-down 0.4s ease 0.25s forwards;
+}
+
+div .MuiDrawer-paperAnchorDockedLeft {
+	box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.16),
+		0 2px 4px 0 rgba(255, 255, 255, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08);
+	border-right: none;
+}
+div .ui.table thead th {
+	background: #f8f8f8;
+}
+
+div .MuiTypography-root {
+	font-family: open;
+}
+
+/* .custom-msg {
+	margin-top: 43px;
+} */
+
+@media only screen and (max-width: 500px) {
+	/* .custom-msg {
+		margin-top: 53px;
+	} */
+
+	div .MuiPaper-elevation4 {
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+			0 2px 4px 0 rgba(14, 30, 37, 0.12);
+	}
+	div .MuiToolbar-regular {
+		min-height: -webkit-fill-available;
+	}
+	#bR {
+		box-shadow: none !important;
+	}
+	#rS::-webkit-scrollbar {
+		height: 0px;
+	}
+}
+div .MuiBackdrop-root {
+	background: #3e3e3e4d;
+}
+.ui.segment {
+	position: fixed;
+}
+div .ui.form .field > label {
+	font-weight: 200;
+	font-family: open;
+	color: #282c34;
+}
+#trash {
+	text-align: center;
+}
+.ui.modal {
+	box-shadow: 1px 3px 3px 0 rgba(185, 185, 185, 0.2),
+		1px 3px 15px 2px rgba(94, 93, 93, 0.2) !important;
+}
+.ui.dimmer {
+	background: rgba(211, 211, 211, 0.33) !important;
+}
