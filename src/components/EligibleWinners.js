@@ -346,7 +346,7 @@ export default function Winners() {
 						)}
 				</Grid>
 				<div className={classes.footer}>
-					All Rights Reserved By <b style={{ fontWeight: 400 }}>SURYA TV</b>.
+					All Rights Reserved By <b style={{ fontWeight: 400 }}>SUN TV</b>.
 					Designed And Developed By{" "}
 					<b style={{ color: "#039af4" }}>DISTRONIX</b>
 					<img
