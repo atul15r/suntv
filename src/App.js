@@ -23,7 +23,7 @@ import {
 } from "./redux/actions/dataActions";
 import { useDispatch } from "react-redux";
 
-axios.defaults.baseURL = "https://surya-tv.distronix.in:4000";
+axios.defaults.baseURL = "https://sun-tv.distronix.in:4000";
 
 function App() {
 	//const data = useSelector(state => state.data);
