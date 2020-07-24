@@ -10,7 +10,11 @@ import axios from "axios";
 import Pagination from "../util/Pagination";
 import { debounce } from "lodash";
 import { CSVLink } from "react-csv";
-import { pushWinner, deleteWinner } from "../redux/actions/dataActions";
+import {
+	pushWinner,
+	deleteWinner,
+	winnersList,
+} from "../redux/actions/dataActions";
 import { shows } from "../util/data";
 import ResponsiveTable from "../util/ResponsiveTableAddWinner";
 import { Archive } from "react-bootstrap-icons";
@@ -214,6 +218,8 @@ function AddWinners() {
 									setOpen(false);
 									setLoading(false);
 								});
+
+							dispatch(winnersList());
 						}
 					}
 				});
@@ -240,7 +246,7 @@ function AddWinners() {
 						console.log("axyios");
 						setOpen(true);
 						setLoading(false);
-						dispatch(pushWinner({ show_name: show, date, phone }));
+						dispatch(winnersList());
 					})
 					.catch(err => {
 						setOpen(false);
