@@ -268,7 +268,7 @@ export const generateWinnersReq = date => dispatch => {
 								//console.log(err.response.data.status);
 								dispatch({
 									type: GENERATE_ERROR,
-									payload: "Please try after 11PM",
+									payload: "Please try after 00:30 AM",
 								});
 								setTimeout(() => {
 									dispatch({ type: GENERATE_ERROR, payload: "" });
