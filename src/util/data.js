@@ -39,9 +39,9 @@ export const questions = [
 ];
 
 export const showsColor = [
-	{ name: "kalyanaveedu", color: "#b5cc18b0" },
-	{ name: "kanmani", color: "#00b5adab" },
-	{ name: "nayagi", color: "#e03997a3" },
+	{ name: "kalyanaveedu", color: "#b5cc18b0", vmn: "6292234401" },
+	{ name: "kanmani", color: "#00b5adab", vmn: "6292234402" },
+	{ name: "nayagi", color: "#e03997a3", vmn: "6292234403" },
 ];
 
 export const stateList = [

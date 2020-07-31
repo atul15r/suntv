@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid, Chip, Snackbar, Slide } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Icon, Table, Dropdown, Button, Modal } from "semantic-ui-react";
+import { Icon, Table, Dropdown, Button, Modal, Menu } from "semantic-ui-react";
 import { CSVLink } from "react-csv";
 import { debounce } from "lodash";
 import Mon from "moment";
@@ -450,7 +450,6 @@ function Questions() {
 								</Table.Cell>
 
 								<Table.Cell>
-									{" "}
 									<Dropdown
 										name='ans_phone'
 										placeholder='Select Answer'
@@ -470,6 +469,39 @@ function Questions() {
 										onChange={(e, data) => setAns_phone(data.value)}
 										style={{ background: theme ? "#212020" : "#fff" }}
 									/>
+
+									{/* <Dropdown
+										text='Messages'
+										pointing='top'
+										className='link item'
+									>
+										<Dropdown.Menu>
+											<Dropdown.Item>
+												<Dropdown
+													text='Option A'
+													pointing='left'
+													className='link item'
+												>
+													<Dropdown.Menu>
+														<Dropdown.Item>Inbox</Dropdown.Item>
+														<Dropdown.Item>Starred</Dropdown.Item>
+													</Dropdown.Menu>
+												</Dropdown>
+											</Dropdown.Item>
+											<Dropdown.Item>
+												<Dropdown
+													text='Option B'
+													pointing='left'
+													className='link item'
+												>
+													<Dropdown.Menu>
+														<Dropdown.Item>Inbox</Dropdown.Item>
+														<Dropdown.Item>Starred</Dropdown.Item>
+													</Dropdown.Menu>
+												</Dropdown>
+											</Dropdown.Item>
+										</Dropdown.Menu>
+									</Dropdown> */}
 								</Table.Cell>
 							</Table.Row>
 						</Table.Body>

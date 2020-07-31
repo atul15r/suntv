@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper, CircularProgress } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import Shows from "./subcomponents/Shows";
+import Sms from "./subcomponents/Sms";
+
 import Des from "../images/des.png";
 import NumberFormat from "react-number-format";
 
@@ -264,10 +266,14 @@ export default function CenteredGrid() {
 						/>
 					</Paper>
 				</Grid>
-
+				<Sms color='#cb3d3d' />
 				{shows.map(data => (
 					<Fragment key={data.name}>
-						<Shows name={data.name.trim().toLowerCase()} color={data.color} />
+						<Shows
+							name={data.name.trim().toLowerCase()}
+							color={data.color}
+							vmn={data.vmn}
+						/>
 					</Fragment>
 				))}
 			</Grid>

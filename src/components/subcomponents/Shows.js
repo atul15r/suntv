@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-export default function Shows({ name, color }) {
+export default function Shows({ name, color, vmn }) {
 	const classes = useStyles();
 	const theme = useSelector(state => state.data.theme);
 	const data = useSelector(state => state.data);
@@ -83,6 +83,11 @@ export default function Shows({ name, color }) {
 	const [totalUniqueCallersToday, sTUTODAY] = React.useState("");
 	const [totalCallers, sTC] = React.useState("");
 	const [totalUniqueCallers, sTU] = React.useState("");
+
+	const [totalSmsToday, setTotalSMSToday] = React.useState("");
+	const [totalUniqueSmsToday, setTotalUniqueSMSToday] = React.useState("");
+	const [totalSms, setTotalSMS] = React.useState("");
+	const [totalUniqueSms, setTotalUniqueSMS] = React.useState("");
 
 	React.useEffect(() => {
 		sync();
@@ -135,6 +140,58 @@ export default function Shows({ name, color }) {
 			.catch(err => {
 				console.log(err);
 				sTU(0);
+			});
+
+		//sms
+
+		axios
+			.post("/showtotalsmstoday", {
+				name: name,
+				vmn: vmn,
+			})
+			.then(res => {
+				setTotalSMSToday(res.data.data);
+			})
+			.catch(err => {
+				console.log(err);
+				setTotalSMSToday(0);
+			});
+
+		axios
+			.post("/showuniquesmstoday", {
+				name: name,
+				vmn: vmn,
+			})
+			.then(res => {
+				setTotalUniqueSMSToday(res.data.data);
+			})
+			.catch(err => {
+				console.log(err);
+				setTotalUniqueSMSToday(0);
+			});
+
+		axios
+			.post("/showtotalsms", {
+				name: name,
+			})
+			.then(res => {
+				setTotalSMS(res.data[0].count);
+			})
+			.catch(err => {
+				console.log(err);
+				setTotalSMS(0);
+			});
+
+		axios
+			.post("/showtotaluniquesms", {
+				name: name,
+			})
+			.then(res => {
+				setTotalUniqueSMS(res.data[0].count);
+			})
+			.catch(err => {
+				console.log(err);
+				setTotalUniqueSMS(0);
 			});
 	};
 
@@ -309,6 +366,198 @@ export default function Shows({ name, color }) {
 					>
 						<b>{name === "npmt" ? "NPMT" : name}</b> - total unique callers
 						today
+					</b>
+					<img
+						src={Des}
+						style={{
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+							borderRadius: 5,
+							opacity: ".1",
+						}}
+					/>
+				</Paper>{" "}
+			</Grid>
+
+			{/* --------------------- sms -----------------------*/}
+
+			<Grid item xs={10} md={3} lg={3}>
+				<Paper
+					className={classes.paper}
+					style={{
+						background: theme
+							? `linear-gradient(-90deg, ${color}, #2b2b2b)`
+							: `linear-gradient(135deg, #f1ede6, ${color} 110%, ${color})`,
+						height: 80,
+						marginTop: -20,
+					}}
+				>
+					<h1 className={classes.h}>
+						{totalSms !== "" ? (
+							<NumberFormat
+								thousandSeparator={true}
+								thousandsGroupStyle='lakh'
+								value={totalSms}
+								style={{
+									fontFamily: "open",
+									background: "none",
+									color: theme ? "#eee" : "#2b2b2b",
+								}}
+							/>
+						) : (
+							<CircularProgress size={10} style={{ color: "#6b6b6b" }} />
+						)}
+					</h1>
+					<b
+						className={classes.b}
+						style={{
+							color: theme ? "#eee" : "#6b6b6b",
+						}}
+					>
+						<b>{name === "npmt" ? "NPMT" : name}</b> - total SMS
+					</b>
+					<img
+						src={Des}
+						style={{
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+							borderRadius: 5,
+							opacity: ".1",
+						}}
+					/>
+				</Paper>
+			</Grid>
+			<Grid item xs={10} md={3} lg={3}>
+				<Paper
+					className={classes.paper}
+					style={{
+						background: theme
+							? `linear-gradient(-90deg, ${color}, #2b2b2b)`
+							: `linear-gradient(135deg, #f1ede6, ${color} 110%, ${color})`,
+						height: 80,
+						marginTop: -20,
+					}}
+				>
+					<h1 className={classes.h}>
+						{totalUniqueSms !== "" ? (
+							<NumberFormat
+								thousandSeparator={true}
+								thousandsGroupStyle='lakh'
+								value={totalUniqueSms}
+								style={{
+									fontFamily: "open",
+									background: "none",
+									color: theme ? "#eee" : "#2b2b2b",
+								}}
+							/>
+						) : (
+							<CircularProgress size={10} style={{ color: "#6b6b6b" }} />
+						)}
+					</h1>
+					<b
+						className={classes.b}
+						style={{
+							color: theme ? "#eee" : "#6b6b6b",
+						}}
+					>
+						{" "}
+						<b>{name === "npmt" ? "NPMT" : name}</b> - total unique SMS
+					</b>
+					<img
+						src={Des}
+						style={{
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+							borderRadius: 5,
+							opacity: ".1",
+						}}
+					/>
+				</Paper>{" "}
+			</Grid>
+			<Grid item xs={10} md={3} lg={3}>
+				<Paper
+					className={classes.paper}
+					style={{
+						background: theme
+							? `linear-gradient(-90deg, ${color}, #2b2b2b)`
+							: `linear-gradient(135deg, #f1ede6, ${color} 110%, ${color})`,
+						height: 80,
+						marginTop: -20,
+					}}
+				>
+					<h1 className={classes.h}>
+						{totalSmsToday !== "" ? (
+							<NumberFormat
+								thousandSeparator={true}
+								thousandsGroupStyle='lakh'
+								value={totalSmsToday}
+								style={{
+									fontFamily: "open",
+									background: "none",
+									color: theme ? "#eee" : "#2b2b2b",
+								}}
+							/>
+						) : (
+							<CircularProgress size={10} style={{ color: "#6b6b6b" }} />
+						)}
+					</h1>
+					<b
+						className={classes.b}
+						style={{
+							color: theme ? "#eee" : "#6b6b6b",
+						}}
+					>
+						<b>{name === "npmt" ? "NPMT" : name}</b> - total sms today
+					</b>
+					<img
+						src={Des}
+						style={{
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+							borderRadius: 5,
+							opacity: ".1",
+						}}
+					/>
+				</Paper>{" "}
+			</Grid>
+			<Grid item xs={10} md={3} lg={3}>
+				<Paper
+					className={classes.paper}
+					style={{
+						background: theme
+							? `linear-gradient(-90deg, ${color}, #2b2b2b)`
+							: `linear-gradient(135deg, #f1ede6, ${color} 110%, ${color})`,
+						height: 80,
+						marginTop: -20,
+					}}
+				>
+					<h1 className={classes.h}>
+						{totalUniqueSmsToday !== "" ? (
+							<NumberFormat
+								thousandSeparator={true}
+								thousandsGroupStyle='lakh'
+								value={totalUniqueSmsToday}
+								style={{
+									fontFamily: "open",
+									background: "none",
+									color: theme ? "#eee" : "#2b2b2b",
+								}}
+							/>
+						) : (
+							<CircularProgress size={10} style={{ color: "#6b6b6b" }} />
+						)}
+					</h1>
+					<b
+						className={classes.b}
+						style={{
+							color: theme ? "#eee" : "#6b6b6b",
+						}}
+					>
+						<b>{name === "npmt" ? "NPMT" : name}</b> - total unique SMS today
 					</b>
 					<img
 						src={Des}
