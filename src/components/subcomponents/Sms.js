@@ -96,7 +96,8 @@ export default function Shows({ name, color }) {
 		axios
 			.post("/totalsmstoday", date)
 			.then(res => {
-				sTCTODAY(res.data.data);
+				console.log(res, "---sms today");
+				sTCTODAY(res.data.count);
 			})
 			.catch(err => {
 				console.log(err);
@@ -106,7 +107,7 @@ export default function Shows({ name, color }) {
 		axios
 			.post("/totaluniquesmstoday", date)
 			.then(res => {
-				sTUTODAY(res.data.data);
+				sTUTODAY(res.data.count);
 			})
 			.catch(err => {
 				console.log(err);
