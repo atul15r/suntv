@@ -31,6 +31,11 @@ import {
 	TODO,
 	GENERATE,
 	GENERATE_FOR_OLD_DATE,
+	SMS_NULL,
+	SMS_PROGRESS,
+	SMS_PROGRESS2,
+	Get_ALLSMS_BYDATE,
+	NO_ALLSMS_BYDATE,
 } from "../types";
 
 const initialState = {
@@ -53,6 +58,11 @@ const initialState = {
 	progress2: false,
 	getAllCallersByDate: [],
 	noAllCallersByDate: false,
+
+	smsprogress: false,
+	smsprogress2: false,
+	getAllSmsByDate: [],
+	noAllSmsByDate: false,
 
 	generate: true,
 	generateForOldDate: false,
@@ -174,6 +184,39 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				getAllCallersByDate: action.payload,
+			};
+
+		//sms
+
+		case Get_ALLSMS_BYDATE:
+			return {
+				...state,
+				getAllSmsByDate: action.payload,
+			};
+
+		case SMS_PROGRESS:
+			console.log("========yess it came");
+			return {
+				...state,
+				smsprogress: action.payload,
+			};
+
+		case SMS_PROGRESS2:
+			return {
+				...state,
+				smsprogress2: action.payload,
+			};
+
+		case NO_ALLSMS_BYDATE:
+			return {
+				...state,
+				noAllSmsByDate: action.payload,
+			};
+
+		case SMS_NULL:
+			return {
+				...state,
+				getAllSmsByDate: action.payload,
 			};
 
 		case WINNERS_PROGRESS:

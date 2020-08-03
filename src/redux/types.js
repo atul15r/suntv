@@ -20,6 +20,13 @@ export const NULL = "NULL";
 export const GENERATE = "GENERATE";
 export const GENERATE_FOR_OLD_DATE = "GENERATE_FOR_OLD_DATE";
 
+//view and download sms
+export const Get_ALLSMS_BYDATE = "Get_ALLSMS_BYDATE";
+export const NO_ALLSMS_BYDATE = "NO_ALLSMS_BYDATE";
+export const SMS_PROGRESS = "SMS_PROGRESS";
+export const SMS_PROGRESS2 = "SMS_PROGRESS2";
+export const SMS_NULL = "SMS_NULL";
+
 //view and download winners
 export const GET_TOTALANDELIGIBLE_WINNERS = "GET_TOTALANDELIGIBLE_WINNERS";
 

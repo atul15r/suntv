@@ -173,6 +173,7 @@ export default function Shows({ name, color, vmn }) {
 		axios
 			.post("/showtotalsms", {
 				name: name,
+				vmn: vmn,
 			})
 			.then(res => {
 				setTotalSMS(res.data[0].count);
@@ -185,6 +186,7 @@ export default function Shows({ name, color, vmn }) {
 		axios
 			.post("/showtotaluniquesms", {
 				name: name,
+				vmn: vmn,
 			})
 			.then(res => {
 				setTotalUniqueSMS(res.data[0].count);

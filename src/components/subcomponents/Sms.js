@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid, CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import NumberFormat from "react-number-format";
-
+import Mon from "moment";
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
@@ -88,12 +88,13 @@ export default function Shows({ name, color }) {
 	React.useEffect(() => {
 		sync();
 	}, []);
-
+	const date = {
+		start: Mon().format("YYYY-MM-DD") + " 00:00:00",
+		end: Mon().format("YYYY-MM-DD") + " 23:59:59",
+	};
 	const sync = () => {
 		axios
-			.post("/showtotalcallertodaynkb", {
-				name: name,
-			})
+			.post("/totalsmstoday", date)
 			.then(res => {
 				sTCTODAY(res.data.data);
 			})
@@ -103,9 +104,7 @@ export default function Shows({ name, color }) {
 			});
 
 		axios
-			.post("/showuniquecallertodayjkb", {
-				name: name,
-			})
+			.post("/totaluniquesmstoday", date)
 			.then(res => {
 				sTUTODAY(res.data.data);
 			})

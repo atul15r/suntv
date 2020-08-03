@@ -35,7 +35,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import PhoneCallbackIcon from "@material-ui/icons/PhoneCallback";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
-import { Award } from "react-bootstrap-icons";
+import { Award, Envelope } from "react-bootstrap-icons";
 
 //componenets
 import Dashboard from "../components/Dashboard";
@@ -43,6 +43,8 @@ import Winners from "../components/Winners";
 import EligibleWinners from "../components/EligibleWinners";
 
 import AllCallers from "../components/AllCallers";
+import AllSms from "../components/AllSms";
+
 import Questions from "../components/Questions";
 import AddWinner from "../components/AddWinners";
 import Logout from "../util/Logout";
@@ -476,6 +478,9 @@ export default function SwipeableTemporaryDrawer() {
 			case "Allcallers":
 				document.title = comp + " | SUN TV";
 				return <AllCallers />;
+			case "AllSms":
+				document.title = comp + " | SUN TV";
+				return <AllSms />;
 			case "Questions":
 				document.title = comp + " | SUN TV";
 				return <Questions />;
@@ -898,6 +903,35 @@ export default function SwipeableTemporaryDrawer() {
 									}}
 								>
 									All Callers
+								</ListItemText>
+							</ListItem>
+
+							<ListItem
+								button
+								onClick={() => changeComp("AllSms")}
+								className={clsx(classes.list, {
+									[classes.listRespTheme]:
+										values.comp === "AllSms" && themeActive,
+									[classes.listResp]: values.comp === "AllSms" && !themeActive,
+								})}
+							>
+								<ListItemIcon>
+									<Envelope
+										size={20}
+										className={clsx(classes.icon, {
+											[classes.iconRespTheme]:
+												values.comp === "AllSms" && themeActive,
+											[classes.iconResp]:
+												values.comp === "AllSms" && !themeActive,
+										})}
+									/>
+								</ListItemIcon>
+								<ListItemText
+									style={{
+										color: themeActive ? "#ccc" : "#212121",
+									}}
+								>
+									All SMS
 								</ListItemText>
 							</ListItem>
 							<ListItem

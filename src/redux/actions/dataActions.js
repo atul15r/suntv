@@ -32,6 +32,11 @@ import {
 	GENERATE,
 	GENERATE_FOR_OLD_DATE,
 	DELETE_QUESTION,
+	Get_ALLSMS_BYDATE,
+	SMS_NULL,
+	SMS_PROGRESS,
+	SMS_PROGRESS2,
+	NO_ALLSMS_BYDATE,
 } from "../types";
 import axios from "axios";
 import Mon from "moment";
@@ -55,7 +60,7 @@ export const questionsList = values => dispatch => {
 	axios
 		.post("/getquestion")
 		.then(res => {
-			console.log("question list run", res.data.data);
+			//console.log("question list run", res.data.data);
 			dispatch({
 				type: QUESTIONS_LIST,
 				payload: res.data.data,
@@ -167,6 +172,73 @@ export const getAllCallers = (date, progress) => dispatch => {
 export const cleanCallersByDate = () => dispatch => {
 	dispatch({
 		type: NULL,
+		payload: "",
+	});
+};
+
+//get all sms
+
+export const getAllSMS = (date, progress) => dispatch => {
+	console.log("redux all sms", date, progress);
+	if (progress === "progress") {
+		dispatch({ type: SMS_PROGRESS, payload: true });
+		dispatch({ type: SMS_PROGRESS2, payload: false });
+	}
+	if (progress === "progress2") {
+		dispatch({ type: SMS_PROGRESS, payload: false });
+
+		dispatch({ type: SMS_PROGRESS2, payload: true });
+	}
+	axios
+		.post("/allsms", { date: date })
+		.then(res => {
+			// console.log(res.data);
+			// console.log(progress);
+			if (progress === "progress") {
+				dispatch({ type: SMS_PROGRESS, payload: false });
+			}
+			if (progress === "progress2") {
+				dispatch({ type: SMS_PROGRESS2, payload: false });
+			}
+
+			dispatch({
+				type: Get_ALLSMS_BYDATE,
+				payload: res.data.data,
+			});
+			dispatch({
+				type: NO_ALLSMS_BYDATE,
+				payload: false,
+			});
+			if (res.data.data.length === 0) {
+				//console.log("no data found");
+				dispatch({
+					type: NO_ALLSMS_BYDATE,
+					payload: true,
+				});
+
+				setTimeout(() => {
+					dispatch({
+						type: NO_ALLSMS_BYDATE,
+						payload: false,
+					});
+				}, 4000);
+			}
+		})
+
+		.catch(err => {
+			if (progress === "progress") {
+				dispatch({ type: SMS_PROGRESS, payload: false });
+			}
+			if (progress === "progress2") {
+				dispatch({ type: SMS_PROGRESS2, payload: false });
+			}
+			//console.log(err);
+		});
+};
+
+export const cleanSMSByDate = () => dispatch => {
+	dispatch({
+		type: SMS_NULL,
 		payload: "",
 	});
 };
