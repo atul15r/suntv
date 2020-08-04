@@ -632,6 +632,34 @@ export default function SwipeableTemporaryDrawer() {
 						</ListItem>
 						<ListItem
 							button
+							onClick={() => changeComp("AllSms")}
+							className={clsx(classes.list, {
+								[classes.listRespTheme]:
+									values.comp === "AllSms" && themeActive,
+								[classes.listResp]: values.comp === "AllSms" && !themeActive,
+							})}
+						>
+							<ListItemIcon>
+								<Envelope
+									size={20}
+									className={clsx(classes.icon, {
+										[classes.iconRespTheme]:
+											values.comp === "AllSms" && themeActive,
+										[classes.iconResp]:
+											values.comp === "AllSms" && !themeActive,
+									})}
+								/>
+							</ListItemIcon>
+							<ListItemText
+								style={{
+									color: themeActive ? "#ccc" : "#212121",
+								}}
+							>
+								All SMS
+							</ListItemText>
+						</ListItem>
+						<ListItem
+							button
 							onClick={() => changeComp("Questions")}
 							className={clsx(classes.list, {
 								[classes.listRespTheme]:
