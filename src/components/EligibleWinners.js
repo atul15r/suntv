@@ -309,7 +309,7 @@ export default function Winners() {
 							""
 						)}
 
-						{/* {data.getEligibleWinners.Poove_Unakkaga.length > 0 ? (
+						{data.getEligibleWinners.Poove_Unakkaga.length > 0 ? (
 							<Grid
 								xs={3}
 								md={1}
@@ -351,9 +351,7 @@ export default function Winners() {
 									onClick={true}
 									data={data.getEligibleWinners.Chithi_2}
 									filename={
-										"Chithi_2 EligibleWinnersList - " +
-										selectedDate +
-										".csv"
+										"Chithi_2 EligibleWinnersList - " + selectedDate + ".csv"
 									}
 								>
 									<b className={classes.txt} style={{ color: "#fff" }}>
@@ -363,7 +361,7 @@ export default function Winners() {
 							</Grid>
 						) : (
 							""
-						)} */}
+						)}
 					</>
 				)}
 			</Grid>
@@ -390,7 +388,9 @@ export default function Winners() {
 					{Object.keys(data.getEligibleWinners).length > 0 &&
 						data.getEligibleWinners.Kalyanaveedu.length === 0 &&
 						data.getEligibleWinners.Kanmani.length === 0 &&
-						data.getEligibleWinners.Nayagi.length === 0 && (
+						data.getEligibleWinners.Nayagi.length === 0 &&
+						data.getEligibleWinners.Poove_Unakkaga.length === 0 &&
+						data.getEligibleWinners.Chithi_2.length === 0 && (
 							<Transition visible={true} animation='scale' duration={500}>
 								<Message style={{ marginTop: 40 }}>
 									<Message.Header>No Data Found</Message.Header>
