@@ -308,6 +308,62 @@ export default function Winners() {
 						) : (
 							""
 						)}
+
+						{/* {data.getEligibleWinners.Poove_Unakkaga.length > 0 ? (
+							<Grid
+								xs={3}
+								md={1}
+								lg={1}
+								className={classes.btn}
+								style={{
+									background: "#21ba45",
+								}}
+							>
+								<CSVLink
+									onClick={true}
+									data={data.getEligibleWinners.Poove_Unakkaga}
+									filename={
+										"Poove_Unakkaga EligibleWinnersList - " +
+										selectedDate +
+										".csv"
+									}
+								>
+									<b className={classes.txt} style={{ color: "#fff" }}>
+										Poove Unakkaga
+									</b>
+								</CSVLink>
+							</Grid>
+						) : (
+							""
+						)}
+
+						{data.getEligibleWinners.Chithi_2.length > 0 ? (
+							<Grid
+								xs={3}
+								md={1}
+								lg={1}
+								className={classes.btn}
+								style={{
+									background: "#21ba45",
+								}}
+							>
+								<CSVLink
+									onClick={true}
+									data={data.getEligibleWinners.Chithi_2}
+									filename={
+										"Chithi_2 EligibleWinnersList - " +
+										selectedDate +
+										".csv"
+									}
+								>
+									<b className={classes.txt} style={{ color: "#fff" }}>
+										Chithi 2
+									</b>
+								</CSVLink>
+							</Grid>
+						) : (
+							""
+						)} */}
 					</>
 				)}
 			</Grid>

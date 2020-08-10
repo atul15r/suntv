@@ -15,7 +15,15 @@ import {
 	questionsList,
 	deleteQuestion,
 } from "../redux/actions/dataActions";
-import { shows, answer, answer1, answer2, answer3 } from "../util/data";
+import {
+	shows,
+	answer,
+	answer1,
+	answer2,
+	answer3,
+	answer4,
+	answer5,
+} from "../util/data";
 import { Archive } from "react-bootstrap-icons";
 
 import ResponsiveTable from "../util/ResponsiveTableQuestion";
@@ -464,6 +472,10 @@ function Questions() {
 												? answer2
 												: name === "nayagi"
 												? answer3
+												: name === "poove unakkaga"
+												? answer4
+												: name === "chithi 2"
+												? answer5
 												: answer
 										}
 										onChange={(e, data) => setAns_phone(data.value)}

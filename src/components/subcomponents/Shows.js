@@ -118,29 +118,99 @@ export default function Shows({ name, color, vmn }) {
 				sTUTODAY(0);
 			});
 
-		axios
-			.post("/showtotalcallers", {
-				name: name,
-			})
-			.then(res => {
-				sTC(res.data[0].count);
-			})
-			.catch(err => {
-				console.log(err);
-				sTC(0);
-			});
-
-		axios
-			.post("/showtotaluniquecallers", {
-				name: name,
-			})
-			.then(res => {
-				sTU(res.data[0].count);
-			})
-			.catch(err => {
-				console.log(err);
-				sTU(0);
-			});
+		if (name === "kalyanaveedu") {
+			axios
+				.post("/api/kalyanaveedutotalcallers", {
+					name: name,
+				})
+				.then(res => {
+					sTC(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTC(0);
+				});
+			axios
+				.post("/api/kalyanaveedutotaluniquecallers", {
+					name: name,
+				})
+				.then(res => {
+					sTU(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTU(0);
+				});
+		} else if (name === "kanmani") {
+			axios
+				.post("/api/kanmanitotalcallers", {
+					name: name,
+				})
+				.then(res => {
+					sTC(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTC(0);
+				});
+			axios
+				.post("/api/kanmanitotaluniquecallers", {
+					name: name,
+				})
+				.then(res => {
+					sTU(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTU(0);
+				});
+		} else if (name === "nayagi") {
+			axios
+				.post("/api/nayagitotalcallers", {
+					name: name,
+				})
+				.then(res => {
+					sTC(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTC(0);
+				});
+			axios
+				.post("/api/nayagitotaluniquecallers", {
+					name: name,
+				})
+				.then(res => {
+					sTU(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTU(0);
+				});
+		} else {
+			axios
+				.post("/showtotalcallers", {
+					name: name,
+				})
+				.then(res => {
+					sTC(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTC(0);
+				});
+			axios
+				.post("/showtotaluniquecallers", {
+					name: name,
+				})
+				.then(res => {
+					sTU(res.data[0].count);
+				})
+				.catch(err => {
+					console.log(err);
+					sTU(0);
+				});
+		}
 
 		//sms
 

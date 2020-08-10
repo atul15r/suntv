@@ -7,32 +7,47 @@ export const shows = [
 	{ key: "kalyanaveedu", value: "kalyanaveedu", text: "kalyanaveedu" },
 	{ key: "kanmani", value: "kanmani", text: "kanmani" },
 	{ key: "nayagi", value: "nayagi", text: "nayagi" },
+	{ key: "poove unakkaga", value: "poove unakkaga", text: "poove unakkaga" },
+	{ key: "chithi 2", value: "chithi 2", text: "chithi 2" },
 ];
 
 export const answer = [
-	{ key: "6292234411", value: "6292234411", text: "6292234411" },
-	{ key: "6292234412", value: "6292234412", text: "6292234412" },
-	{ key: "6292234413", value: "6292234413", text: "6292234413" },
-	{ key: "6292234414", value: "6292234414", text: "6292234414" },
-	{ key: "6292234415", value: "6292234415", text: "6292234415" },
-	{ key: "6292234416", value: "6292234416", text: "6292234416" },
+	{ key: "6357183301", value: "6357183301", text: "6357183301" },
+	{ key: "6357183302", value: "6357183302", text: "6357183302" },
+	{ key: "6357183303", value: "6357183303", text: "6357183303" },
+	{ key: "6357183304", value: "6357183304", text: "6357183304" },
+	{ key: "6357183305", value: "6357183305", text: "6357183305" },
+	{ key: "6357183306", value: "6357183306", text: "6357183306" },
+	{ key: "6357183307", value: "6357183307", text: "6357183307" },
+	{ key: "6357183308", value: "6357183308", text: "6357183308" },
+	{ key: "6357183309", value: "6357183309", text: "6357183309" },
+	{ key: "6357183310", value: "6357183310", text: "6357183310" },
 ];
 
 export const answer1 = [
-	{ key: "6292234411", value: "6292234411", text: "6292234411" },
-	{ key: "6292234412", value: "6292234412", text: "6292234412" },
+	{ key: "6357183301", value: "6357183301", text: "6357183301" },
+	{ key: "6357183302", value: "6357183302", text: "6357183302" },
 ];
 
 export const answer2 = [
-	{ key: "6292234413", value: "6292234413", text: "6292234413" },
-	{ key: "6292234414", value: "6292234414", text: "6292234414" },
+	{ key: "6357183303", value: "6357183303", text: "6357183303" },
+	{ key: "6357183304", value: "6357183304", text: "6357183304" },
 ];
 
 export const answer3 = [
-	{ key: "6292234415", value: "6292234415", text: "6292234415" },
-	{ key: "6292234416", value: "6292234416", text: "6292234416" },
+	{ key: "6357183305", value: "6357183305", text: "6357183305" },
+	{ key: "6357183306", value: "6357183306", text: "6357183306" },
 ];
 
+export const answer4 = [
+	{ key: "6357183307", value: "6357183307", text: "6357183307" },
+	{ key: "6357183308", value: "6357183308", text: "6357183308" },
+];
+
+export const answer5 = [
+	{ key: "6357183309", value: "6357183309", text: "6357183309" },
+	{ key: "6357183310", value: "6357183310", text: "6357183310" },
+];
 export const questions = [
 	{ key: "1", value: 1, text: 1 },
 	{ key: "2", value: 2, text: 2 },
@@ -42,6 +57,8 @@ export const showsColor = [
 	{ name: "kalyanaveedu", color: "#b5cc18b0", vmn: "6292234401" },
 	{ name: "kanmani", color: "#00b5adab", vmn: "6292234402" },
 	{ name: "nayagi", color: "#e03997a3", vmn: "6292234403" },
+	{ name: "poove unakkaga", color: "#00b5adab", vmn: "6292234404" },
+	{ name: "chithi 2", color: "#e03997a3", vmn: "6292234405" },
 ];
 
 export const stateList = [
